@@ -16,12 +16,9 @@ public partial class Window1 : Window
 
     private void ToMainWindowReg(object? sender, RoutedEventArgs e)
     {
-        Menu menu = new Menu()
-        {
-            DataContext = ViewModels.RegViewMod
-        };
-
-        reg.Show();
+        Menu menu = new Menu();
+            
+        menu.Show();
 
         this.Close();
     }

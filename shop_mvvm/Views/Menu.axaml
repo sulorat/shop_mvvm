@@ -1,12 +1,26 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:shop_mvvm.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        x:DataType="vm:MenuViewModel"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="shop_mvvm.Menu"
 		
         Title="Menu">
-	<Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*,*" ShowGridLines="True">
-		<TextBlock Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Right" Text="{Binding NameController}"></TextBlock>
+	<Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*" ShowGridLines="True">
+		<TextBlock Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Right" Text=""></TextBlock>
+		<ListBox x:Name="ProductsList" ItemsSource="{Binding ProductsList}" Grid.Row="1" Grid.Column="1" Margin="10"></ListBox>
+		<ListBox.ItemTemplate>
+			<DataTemplate>
+				<StackPanel Orientation="Vertical">
+					<StackPanel Orientation="Horizontal">
+						<TextBlock ></TextBlock>
+						
+						
+					</StackPanel>
+				</StackPanel>
+			</DataTemplate>
+		</ListBox.ItemTemplate>
 	</Grid>
 </Window>
