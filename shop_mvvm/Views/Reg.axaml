@@ -1,0 +1,35 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:vm ="using:shop_mvvm.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="shop_mvvm.Window1"
+		x:DataType="vm:RegViewModel"
+        Title="Reg">
+		<Window.Background>
+			<RadialGradientBrush GradientOrigin="0.5,0.5" Center="0.5,0.5">
+				<GradientStop Color="#808000" Offset="0" />
+				<GradientStop Color="#008000" Offset="1" />
+			</RadialGradientBrush>
+		</Window.Background>
+
+		<Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*,*" ShowGridLines="True">
+			<TextBlock FontSize="40" >Shop</TextBlock>
+			<StackPanel Grid.Row="0" Grid.Column="1">
+
+				<TextBlock  FontSize="15" HorizontalAlignment="Center" Margin="0,30,0,0">Пройдите регистрацию</TextBlock>
+				<TextBlock  HorizontalAlignment="Center" Margin="0,40,0,0">Name</TextBlock>
+				<TextBox Text="{Binding NameController}" x:Name="Name" HorizontalAlignment="Center" Width="150"> </TextBox>
+				<TextBlock HorizontalAlignment="Center" Margin="0,30,0,0">Password</TextBlock>
+				<TextBox Text="{Binding PassController}" x:Name="Password" HorizontalAlignment="Center" Width="150" PasswordChar="*"> </TextBox>
+
+				<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+					<Button Margin="0,50,0,0" Width="65" Click="ToMainWindowReg">Sign in</Button>
+					<Button Margin="0,50,0,0" Width="65" Click="ToMainWindowReg">Guest</Button>
+				</StackPanel>
+
+			</StackPanel>
+		</Grid>
+		
+</Window>
