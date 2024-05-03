@@ -9,18 +9,29 @@
 		
         Title="Menu">
 	<Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*" ShowGridLines="True">
-		<TextBlock Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Right" Text=""></TextBlock>
-		<ListBox x:Name="ProductsList" ItemsSource="{Binding ProductsList}" Grid.Row="1" Grid.Column="1" Margin="10"></ListBox>
+		<TextBlock Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Right" Text="{Binding NameController}"></TextBlock>
+		<ListBox x:Name="ProductsList" ItemsSource="{Binding ProductsList}" Grid.Row="1" Grid.Column="1" Margin="10">
 		<ListBox.ItemTemplate>
 			<DataTemplate>
 				<StackPanel Orientation="Vertical">
 					<StackPanel Orientation="Horizontal">
-						<TextBlock ></TextBlock>
-						
-						
+						<TextBlock Margin="10" Text="{Binding ProductName}"> </TextBlock>
+					</StackPanel>
+					<StackPanel Orientation ="Horizontal">
+						<TextBlock Margin="10" Text="{Bindings ProductDescription}"></TextBlock>
+					</StackPanel>
+					<StackPanel Orientation ="Horizontal">
+						<TextBlock Margin="10" Text="{Bindings ProductPrice}"></TextBlock>
+					</StackPanel>
+					<StackPanel Orientation ="Horizontal">
+						<TextBlock Margin="10" Text="{Bindings ProductCount}"></TextBlock>
+					</StackPanel>
+					<StackPanel Orientation ="Horizontal">
+						<TextBlock Margin="10" Text="{Bindings ProductManufacturer}"></TextBlock>
 					</StackPanel>
 				</StackPanel>
 			</DataTemplate>
 		</ListBox.ItemTemplate>
+		</ListBox>
 	</Grid>
 </Window>

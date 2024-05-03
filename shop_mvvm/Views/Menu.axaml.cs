@@ -13,4 +13,8 @@ public partial class Menu : Window
         DataContext = new MenuViewModel();
 
     }
+
+    
+
+
 }

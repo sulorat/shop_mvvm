@@ -16,8 +16,17 @@ public partial class Window1 : Window
 
     private void ToMainWindowReg(object? sender, RoutedEventArgs e)
     {
+        MenuViewModel menuModel = new MenuViewModel();
         Menu menu = new Menu();
-            
+
+        string _name = Name.Text.ToLower();
+
+        string _password = Password.Text.ToLower();
+
+        if (_name =="admin"&& _password=="admin")
+        {
+            menuModel.isAdmin = true;
+        }
         menu.Show();
 
         this.Close();
