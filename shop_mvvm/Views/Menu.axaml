@@ -8,27 +8,17 @@
         x:Class="shop_mvvm.Menu"
 		
         Title="Menu">
-	<Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*" ShowGridLines="True">
-		<TextBlock Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Right" Text="{Binding NameController}"></TextBlock>
-		<ListBox x:Name="ProductsList" ItemsSource="{Binding ProductsList}" Grid.Row="1" Grid.Column="1" Margin="10">
+	<Grid ColumnDefinitions="*,*,*" RowDefinitions="3*,*" ShowGridLines="True">
+		<TextBlock Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Right" Text=""></TextBlock>
+		<ListBox x:Name="ProductsList" ItemsSource="{Binding Path=ProductsList, Mode = OneWay}"  Grid.Column="1" Width="600" Margin="10">
 		<ListBox.ItemTemplate>
 			<DataTemplate>
-				<StackPanel Orientation="Vertical">
-					<StackPanel Orientation="Horizontal">
-						<TextBlock Margin="10" Text="{Binding ProductName}"> </TextBlock>
-					</StackPanel>
-					<StackPanel Orientation ="Horizontal">
-						<TextBlock Margin="10" Text="{Bindings ProductDescription}"></TextBlock>
-					</StackPanel>
-					<StackPanel Orientation ="Horizontal">
-						<TextBlock Margin="10" Text="{Bindings ProductPrice}"></TextBlock>
-					</StackPanel>
-					<StackPanel Orientation ="Horizontal">
-						<TextBlock Margin="10" Text="{Bindings ProductCount}"></TextBlock>
-					</StackPanel>
-					<StackPanel Orientation ="Horizontal">
-						<TextBlock Margin="10" Text="{Bindings ProductManufacturer}"></TextBlock>
-					</StackPanel>
+				<StackPanel Orientation="Horizontal">
+						<TextBlock Margin="0,20,100,20" Text="{Binding ProductId}"> </TextBlock>
+						<TextBlock Margin="0,20,100,20" Text="{Binding ProductName}"></TextBlock>
+						<TextBlock Margin="0,20,100,20" Text="{Binding ProductDescription}"></TextBlock>
+						<TextBlock Margin="0,20,100,20" Text="{Binding ProductCount}"></TextBlock>
+						<TextBlock Margin="0,20,100,20" Text="{Binding ProductPrice}"></TextBlock>
 				</StackPanel>
 			</DataTemplate>
 		</ListBox.ItemTemplate>

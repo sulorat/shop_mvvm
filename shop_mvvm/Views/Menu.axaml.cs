@@ -2,6 +2,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using shop_mvvm.ViewModels;
+using shop_mvvm.Models;
 
 namespace shop_mvvm;
 

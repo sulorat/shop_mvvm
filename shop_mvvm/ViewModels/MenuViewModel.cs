@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ReactiveUI;
+using DynamicData;
 
 namespace shop_mvvm.ViewModels 
 {
@@ -15,23 +16,30 @@ namespace shop_mvvm.ViewModels
         private ObservableCollection<Product> _ProductsList;
 
 
-        public ObservableCollection<Product> ProductsList
+        //public ObservableCollection<Product> ProductsList
+        //{
+        //    get => _ProductsList;
+            
+        //}
+            public ObservableCollection<Product> ProductsList { get; } = new ObservableCollection<Product>()
         {
-            get => _ProductsList;
-            set => this.RaiseAndSetIfChanged(ref _ProductsList, value);
-        }
+            new Product() { ProductName = "Item 1" },
+            new Product() { ProductName = "Item 2" },
+            new Product() { ProductName = "Item 3" },
+        };
 
-       
         
+
+
         public bool isAdmin
         {
             get => _isAdmin;
             set => this.RaiseAndSetIfChanged(ref _isAdmin, value);
         }
-        
+
         public MenuViewModel()
         {
-
+            ProductsList.Add(new Product { ProductId=1, ProductName = "1232131", ProductDescription="dada", ProductCount=3, ProductPrice= 3000 });
         }
 
     }

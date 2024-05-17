@@ -14,7 +14,7 @@ namespace shop_mvvm.Models
         public string ProductDescription { get; set; }
         public float ProductPrice { get; set; }
         public int ProductCount { get; set; }
-        public string ProductManufacturer { get; set; }
+        //public string ProductManufacturer { get; set; }
 
     }
 }
