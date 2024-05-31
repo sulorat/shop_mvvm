@@ -23,6 +23,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\AddTble.axaml.cs">
+      <DependentUpon>AddTble.axaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Reg.axaml.cs">
       <DependentUpon>Reg.axaml</DependentUpon>
     </Compile>

@@ -15,13 +15,7 @@ namespace shop_mvvm.ViewModels
         private bool _isAdmin;
         private ObservableCollection<Product> _ProductsList;
 
-
-        //public ObservableCollection<Product> ProductsList
-        //{
-        //    get => _ProductsList;
-            
-        //}
-            public ObservableCollection<Product> ProductsList { get; } = new ObservableCollection<Product>()
+        public ObservableCollection<Product> ProductsList { get; } = new ObservableCollection<Product>()
         {
             new Product() { ProductName = "Item 1" },
             new Product() { ProductName = "Item 2" },
@@ -29,7 +23,6 @@ namespace shop_mvvm.ViewModels
         };
 
         
-
 
         public bool isAdmin
         {

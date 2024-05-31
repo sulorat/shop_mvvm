@@ -16,5 +16,7 @@ namespace shop_mvvm.Models
         public int ProductCount { get; set; }
         //public string ProductManufacturer { get; set; }
 
+
+
     }
 }
