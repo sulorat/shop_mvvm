@@ -14,15 +14,16 @@
 		<ListBox.ItemTemplate>
 			<DataTemplate>
 				<StackPanel Orientation="Horizontal">
-						<TextBlock Margin="0,20,100,20" Text="{Binding ProductId}"> </TextBlock>
+						<TextBlock Margin="0,20,100,20" Text="{Binding ProductId}"/> 
 					
-						<TextBlock Margin="0,20,100,20" Text="{Binding ProductName}"></TextBlock>
+						<TextBlock Margin="0,20,100,20" Text="{Binding ProductName}"/>
 					
-						<TextBlock Margin="0,20,100,20" Text="{Binding ProductDescription}"></TextBlock>
+						<TextBlock Margin="0,20,100,20" Text="{Binding ProductDescription}"/>
 					
-						<TextBlock Margin="0,20,100,20" Text="{Binding ProductCount}"></TextBlock>
+						<TextBlock Margin="0,20,100,20" Text="{Binding ProductCount}"/>
 					
-						<TextBlock Margin="0,20,100,20" Text="{Binding ProductPrice}"></TextBlock>
+						<TextBlock Margin="0,20,100,20" Text="{Binding ProductPrice}"/>
+					
 				</StackPanel>
 			</DataTemplate>
 		</ListBox.ItemTemplate>

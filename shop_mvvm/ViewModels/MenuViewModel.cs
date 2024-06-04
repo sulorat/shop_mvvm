@@ -17,9 +17,9 @@ namespace shop_mvvm.ViewModels
 
         public ObservableCollection<Product> ProductsList { get; } = new ObservableCollection<Product>()
         {
-            new Product() { ProductName = "Item 1" },
-            new Product() { ProductName = "Item 2" },
-            new Product() { ProductName = "Item 3" },
+            //new Product() { ProductName = "Item 1" },
+            //new Product() { ProductName = "Item 2" },
+            //new Product() { ProductName = "Item 3" },
         };
 
         
@@ -32,7 +32,7 @@ namespace shop_mvvm.ViewModels
 
         public MenuViewModel()
         {
-            ProductsList.Add(new Product { ProductId=1, ProductName = "1232131", ProductDescription="dada", ProductCount=3, ProductPrice= 3000 });
+            ProductsList.Add(new Product (1, "1232131", "dada", 3, 3000 ));
         }
 
     }
