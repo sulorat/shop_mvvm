@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Avalonia;
 using shop_mvvm.Models;
 using shop_mvvm.ViewModels;
 
@@ -24,7 +25,7 @@ namespace shop_mvvm.ViewModels
         public int ProductId
         {
             get => _productId;
-            set => _productId = menu.ProductsList.Count + 1;
+            set => _productId = MenuViewModel.ProductsList.Count + 1;
         }
         public string Name
         {
@@ -52,8 +53,8 @@ namespace shop_mvvm.ViewModels
 
         public void AddProduct()
         {
-            
-            menu.ProductsList.Add(new Product(ProductId, Name, Description, Price, Count));
+
+            MenuViewModel.ProductsList.Add(new Product(ProductId, Name, Description, Price, Count));
         }
 
     }

@@ -17,14 +17,11 @@ namespace shop_mvvm.Views
 
             
         }
-        public void test()
-        {
-            
-        }
+        
+
         private void Adding(object? sender, RoutedEventArgs e)
         {
-            menuViewModel.ProductsList.Add(new Product (1,Name.Text,Descrription.Text,Convert.ToSingle(Price.Text),Convert.ToInt32(Count.Text)));
-            Console.WriteLine(menuViewModel.ProductsList.Count);
+           
             Menu menu = new Menu();
 
             menu.Show(); 

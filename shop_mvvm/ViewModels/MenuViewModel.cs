@@ -12,17 +12,17 @@ namespace shop_mvvm.ViewModels
 {
     internal class MenuViewModel : ViewModelBase
     {
+
         private bool _isAdmin;
-        private ObservableCollection<Product> _ProductsList;
+        private static ObservableCollection<Product> _ProductsList = new();
 
-        public ObservableCollection<Product> ProductsList { get; } = new ObservableCollection<Product>()
+       
+
+        public static ObservableCollection<Product> ProductsList
         {
-            //new Product() { ProductName = "Item 1" },
-            //new Product() { ProductName = "Item 2" },
-            //new Product() { ProductName = "Item 3" },
-        };
-
-        
+            get => _ProductsList;
+            set => _ProductsList = value;
+        }
 
         public bool isAdmin
         {
@@ -32,7 +32,7 @@ namespace shop_mvvm.ViewModels
 
         public MenuViewModel()
         {
-            ProductsList.Add(new Product (1, "1232131", "dada", 3, 3000 ));
+            //ProductsList.Add(new Product(1, "1232131", "dada", 3, 3000));
         }
 
     }

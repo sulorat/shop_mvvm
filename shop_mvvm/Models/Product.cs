@@ -20,10 +20,15 @@ namespace shop_mvvm.Models
         public Product(int productId, string productName, string productDescription, float productPrice, int productCount)
         {
             ProductId = productId;
+
             ProductName = productName;
+
             ProductDescription = productDescription;
+
             ProductPrice = productPrice;
+
             ProductCount = productCount;
+
         }
     }
 
