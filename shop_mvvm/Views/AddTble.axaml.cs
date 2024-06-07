@@ -8,23 +8,25 @@ namespace shop_mvvm.Views
 {
     public partial class AddTble : Window
     {
-        MenuViewModel menuViewModel = new MenuViewModel();
+        
         public AddTble()
         {
+            MenuViewModel menuViewModel = new MenuViewModel();
+
+            AddTableViewModel addTableViewModel = new AddTableViewModel();
+
             InitializeComponent(); 
             
-            DataContext = menuViewModel;
-
-            
+            DataContext = addTableViewModel;
+          
         }
         
 
         private void Adding(object? sender, RoutedEventArgs e)
         {
-           
-            Menu menu = new Menu();
-
-            menu.Show(); 
+            Menu menu = new();
+            
+            menu.Show();
 
             this.Close();
         }

@@ -10,6 +10,7 @@ namespace shop_mvvm;
 
 public partial class Menu : Window
 {
+   
     public Menu()
     {
         InitializeComponent();
@@ -19,9 +20,7 @@ public partial class Menu : Window
 
     private void ToAdd(object? sender, RoutedEventArgs e)
     {
-        AddTble addTble =  new AddTble();
-        
-        addTble.Show();
+        new AddTble().Show();
 
         this.Close();
     }

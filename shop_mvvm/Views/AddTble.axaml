@@ -11,24 +11,23 @@
 		
 		<TextBlock Margin="50,30,10,10">Name</TextBlock>
 		
-		<TextBox x:Name="Name" Margin="0,0,200,0" Width="500"></TextBox>
+		<TextBox x:Name="Name" Text="{Binding Name}" Margin="0,0,200,0" Width="500"></TextBox>
 		
 		<TextBlock Margin="50,30,10,10">Description</TextBlock>
 		
-		<TextBox x:Name="Descrription" Width="500" Margin="0,0,200,0" AcceptsReturn="True" TextWrapping="Wrap"></TextBox>
+		<TextBox x:Name="Descrription" Text="{Binding Description}" Width="500" Margin="0,0,200,0" AcceptsReturn="True" TextWrapping="Wrap"></TextBox>
 		
 		<TextBlock Margin="50,30,10,10">Price</TextBlock>
 		
-		<TextBox x:Name="Price" Width="500" Margin="0,0,200,0"></TextBox>
+		<TextBox x:Name="Price" Text="{Binding Price}" Width="500" Margin="0,0,200,0"></TextBox>
 		
 		<TextBlock Margin="50,30,10,10" >Count</TextBlock>
 		
-		<TextBox x:Name="Count" Margin="0,0,200,0" Width="500"></TextBox>
-		
+		<TextBox x:Name="Count" Text="{Binding Count}" Margin="0,0,200,0" Width="500"></TextBox>		
 		
 		<StackPanel  Margin="0,30,0,0" HorizontalAlignment="Center" Orientation="Horizontal">
 			
-		<Button Command="{Binding AddProduct}" Click="Adding" Width="100"   HorizontalContentAlignment="Center" > Add</Button>
+		<Button Command="{Binding AddProduct}" Click="Adding" Width="100" HorizontalContentAlignment="Center" > Add</Button>
 			
 		</StackPanel>
 		

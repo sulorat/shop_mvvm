@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,13 +12,11 @@ namespace shop_mvvm.ViewModels
 {
     
     
-    internal class AddTableViewModel
+    internal class AddTableViewModel 
     {
-
-        MenuViewModel menu = new MenuViewModel();
         private string _name;
         private string _description;
-        private float _price;
+        private double _price;
         private int _count;
         private int _productId;
 
@@ -39,10 +38,13 @@ namespace shop_mvvm.ViewModels
             set => _description = value;
         }
 
-        public float Price
+        public double Price
         {
             get => _price;
-            set => _price = value;  
+            set 
+            {
+                _price = Math.Round(value, 2); 
+            }
         }
 
         public int Count

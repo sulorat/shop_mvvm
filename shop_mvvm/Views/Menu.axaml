@@ -10,24 +10,36 @@
         Title="Menu">
 	<Grid ColumnDefinitions="*,*,*" RowDefinitions="3*,*" ShowGridLines="True">
 		<TextBlock Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Right" Text=""></TextBlock>
-		<ListBox x:Name="ProductsList" ItemsSource="{Binding Path=ProductsList, Mode = OneWay}"  Grid.Column="1" Width="600" Margin="10">
+		<ListBox x:Name="ProductsList" Grid.Row="0"  ItemsSource="{Binding Path=ProductsList, Mode = OneWay}"  Grid.Column="1" Width="600" >
+			
 		<ListBox.ItemTemplate>
 			<DataTemplate>
+				
 				<StackPanel Orientation="Horizontal">
-						<TextBlock Margin="0,20,100,20" Text="{Binding ProductId}"/> 
+						<TextBlock  Margin="30,0 0,20">Id</TextBlock>
+					
+						<TextBlock Margin="0,20,100,20" Text="{Binding ProductId}"/>
+					
+						<TextBlock Margin="30,0 0,20" >Name</TextBlock>
 					
 						<TextBlock Margin="0,20,100,20" Text="{Binding ProductName}"/>
 					
-						<TextBlock Margin="0,20,100,20" Text="{Binding ProductDescription}"/>
+						<TextBlock Margin="30,0 0,20" >Description</TextBlock>
+					
+						<TextBlock MaxWidth="100" Margin="0,20,100,20"  TextWrapping="Wrap" Text="{Binding ProductDescription}"/>
+					
+						<TextBlock Margin="30,0 0,20" >Count</TextBlock>
 					
 						<TextBlock Margin="0,20,100,20" Text="{Binding ProductCount}"/>
+					
+						<TextBlock Margin="30,0 0,20" >Price</TextBlock>
 					
 						<TextBlock Margin="0,20,100,20" Text="{Binding ProductPrice}"/>				
 				</StackPanel>
 			</DataTemplate>
 		</ListBox.ItemTemplate>
 		</ListBox>
-		<StackPanel  Grid.Row="1" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" >
+		<StackPanel  Grid.Row="2" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" >
 		<Button Margin="30,0,0,0" Click="ToAdd">Add</Button>
 		</StackPanel>
 	</Grid>

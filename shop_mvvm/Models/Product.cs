@@ -12,12 +12,12 @@ namespace shop_mvvm.Models
         public int ProductId { get; set; } 
         public string ProductName { get; set; }
         public string ProductDescription { get; set; }
-        public float ProductPrice { get; set; }
+        public double ProductPrice { get; set; }
         public int ProductCount { get; set; }
         //public string ProductManufacturer { get; set; }
 
 
-        public Product(int productId, string productName, string productDescription, float productPrice, int productCount)
+        public Product(int productId, string productName, string productDescription, double productPrice, int productCount)
         {
             ProductId = productId;
 
