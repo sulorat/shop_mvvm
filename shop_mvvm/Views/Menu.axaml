@@ -8,39 +8,43 @@
         x:Class="shop_mvvm.Menu"
 		
         Title="Menu">
-	<Grid ColumnDefinitions="*,*,*" RowDefinitions="3*,*" ShowGridLines="True">
+	<Grid ColumnDefinitions="*,*,*" RowDefinitions="3*,*" ShowGridLines="False">
 		<TextBlock Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Right" Text=""></TextBlock>
 		<ListBox x:Name="ProductsList" Grid.Row="0"  ItemsSource="{Binding Path=ProductsList, Mode = OneWay}"  Grid.Column="1" Width="600" >
 			
 		<ListBox.ItemTemplate>
 			<DataTemplate>
-				
-				<StackPanel Orientation="Horizontal">
-						<TextBlock  Margin="30,0 0,20">Id</TextBlock>
+				<Grid RowDefinitions="*,*,*,*,*" ShowGridLines="True" ColumnDefinitions="*,*,*,*">
 					
-						<TextBlock Margin="0,20,100,20" Text="{Binding ProductId}"/>
+						<TextBlock Grid.Column="1" TextAlignment="Center"  Margin="10,0, 0,20">Id</TextBlock>
 					
-						<TextBlock Margin="30,0 0,20" >Name</TextBlock>
+						<TextBlock Grid.Row="0" Grid.Column="2" TextAlignment="Center" Margin="0,20,40,20" Text="{Binding ProductId}"/>
 					
-						<TextBlock Margin="0,20,100,20" Text="{Binding ProductName}"/>
+						<TextBlock Grid.Row="1" Grid.Column="1" TextAlignment="Center"  Margin="20,0, 0,20" >Name</TextBlock>
 					
-						<TextBlock Margin="30,0 0,20" >Description</TextBlock>
+						<TextBlock Grid.Column="2" Grid.Row="1"  TextAlignment="Center" Margin="0,20, 0,20" Text="{Binding ProductName}"/>
 					
-						<TextBlock MaxWidth="100" Margin="0,20,100,20"  TextWrapping="Wrap" Text="{Binding ProductDescription}"/>
+						<TextBlock Grid.Column="1" Grid.Row="2"  TextAlignment="Center" Margin="20,0 10,20" >Description</TextBlock>
 					
-						<TextBlock Margin="30,0 0,20" >Count</TextBlock>
+						<TextBlock Grid.Column="2" Grid.Row="2" TextAlignment="Center" MaxWidth="80" Margin="0,20,0,20"  TextWrapping="Wrap" Text="{Binding ProductDescription}"/>
 					
-						<TextBlock Margin="0,20,100,20" Text="{Binding ProductCount}"/>
+						<TextBlock Grid.Column="1" Grid.Row="3" TextAlignment="Center"  Margin="20,0 10,20" >Count</TextBlock>
 					
-						<TextBlock Margin="30,0 0,20" >Price</TextBlock>
+						<TextBlock Grid.Column="2" Grid.Row="3"  TextAlignment="Center" Margin="10,20,0,20" Text="{Binding ProductCount}"/>
 					
-						<TextBlock Margin="0,20,100,20" Text="{Binding ProductPrice}"/>				
-				</StackPanel>
+						<TextBlock Grid.Column="1" Grid.Row="4" TextAlignment="Center" Margin="20,0 0,20" >Price</TextBlock>
+					
+						<TextBlock Grid.Column="2" Grid.Row="4" TextAlignment="Center" Margin="10,20,40,20" Text="{Binding ProductPrice}"/>
+
+					<CheckBox Grid.Column="" > </CheckBox>
+				</Grid>
 			</DataTemplate>
 		</ListBox.ItemTemplate>
+			
 		</ListBox>
 		<StackPanel  Grid.Row="2" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" >
 		<Button Margin="30,0,0,0" Click="ToAdd">Add</Button>
+			<Button></Button>
 		</StackPanel>
 	</Grid>
 </Window>

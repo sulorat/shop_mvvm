@@ -10,15 +10,16 @@ using shop_mvvm.ViewModels;
 
 namespace shop_mvvm.ViewModels
 {
-    
-    
-    internal class AddTableViewModel 
+
+
+    internal class AddTableViewModel
     {
         private string _name;
         private string _description;
         private double _price;
         private int _count;
         private int _productId;
+        private bool _available_in_stock;
 
 
         public int ProductId
@@ -41,16 +42,24 @@ namespace shop_mvvm.ViewModels
         public double Price
         {
             get => _price;
-            set 
+            set
             {
-                _price = Math.Round(value, 2); 
+                _price = Math.Round(value, 2);
             }
         }
 
         public int Count
         {
             get => _count;
-            set => _count = value;
+            set => _count = value; 
+        }
+
+        public bool Available_in_stock()
+        {
+            if(Count>0)
+                return true;
+            else    
+                return false;
         }
 
         public void AddProduct()
