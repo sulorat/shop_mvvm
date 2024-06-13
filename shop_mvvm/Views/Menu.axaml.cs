@@ -24,4 +24,15 @@ public partial class Menu : Window
 
         this.Close();
     }
+
+    private void ToCart(object? sender, RoutedEventArgs e)
+    {
+        Cart cart = new();
+
+        cart.Show();
+
+        this.Close();
+
+        cart.DataContext = new MenuViewModel();
+    }
 }

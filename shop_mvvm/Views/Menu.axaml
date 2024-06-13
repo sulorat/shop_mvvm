@@ -10,7 +10,7 @@
         Title="Menu">
 	<Grid ColumnDefinitions="*,*,*" RowDefinitions="3*,*" ShowGridLines="False">
 		<TextBlock Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Right" Text=""></TextBlock>
-		<ListBox x:Name="ProductsList" Grid.Row="0"  ItemsSource="{Binding Path=ProductsList, Mode = OneWay}"  Grid.Column="1" Width="600" >
+		<ListBox x:Name="ProductsList" Grid.Row="0"  ItemsSource="{Binding Path=ProductsList, Mode = OneWay}" SelectedItems="{Binding SelectedProducts}"  Grid.Column="1" Width="600" >
 			
 		<ListBox.ItemTemplate>
 			<DataTemplate>
@@ -36,15 +36,20 @@
 					
 						<TextBlock Grid.Column="2" Grid.Row="4" TextAlignment="Center" Margin="10,20,40,20" Text="{Binding ProductPrice}"/>
 
+						
+						
 					<CheckBox Grid.Column="" > </CheckBox>
 				</Grid>
 			</DataTemplate>
 		</ListBox.ItemTemplate>
 			
 		</ListBox>
-		<StackPanel  Grid.Row="2" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" >
-		<Button Margin="30,0,0,0" Click="ToAdd">Add</Button>
-			<Button></Button>
+		<StackPanel  Grid.Row="2"  Orientation="Horizontal" VerticalAlignment="Center" >
+			
+		<TextBox Margin="100,0,0,0" x:Name="SearchTextBox" Width="200" ></TextBox>
+			
+		<Button Margin="30,0,0,0" Click="ToAdd">Add new product</Button>
+			<Button Click="ToCart">Add to cart</Button>
 		</StackPanel>
 	</Grid>
 </Window>
