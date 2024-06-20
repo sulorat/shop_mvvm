@@ -38,7 +38,7 @@
 
 						
 						
-					<CheckBox Grid.Column="" > </CheckBox>
+					<CheckBox Grid.Row="2" Grid.Column="" > </CheckBox>
 				</Grid>
 			</DataTemplate>
 		</ListBox.ItemTemplate>
@@ -50,7 +50,7 @@
 			
 		<Button Margin="30,0,0,0" Click="ToAdd">Add new product</Button>
 		<Button Click="ToCart">Add to cart</Button>
-		<Button Click="{Binding DeleteProduct}"></Button>
+		<Button  Command="{Binding Deleting}"></Button>
 		</StackPanel>
 	</Grid>
 </Window>

@@ -70,13 +70,18 @@ namespace shop_mvvm.ViewModels
             }
         }
 
-        public void DeleteProduct(ObservableCollection<Product> selected_product)
+        public  void DeleteProduct(ObservableCollection<Product> selected_product)
         {
             selected_product = SelectedProducts;
             ProductsList.Remove(selected_product);
         }
-
-
+    
+        public void Deleting()
+        {
+            DeleteProduct(_selectedProducts);
+        }
+       
+        
         public MenuViewModel()
         {
             
