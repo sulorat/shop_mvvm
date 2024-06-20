@@ -15,11 +15,13 @@ namespace shop_mvvm.ViewModels
     internal class CartViewModel
     {
         private ObservableCollection<Product> _cartList;
-
+        MenuViewModel _menuViewModel = new MenuViewModel();
+        
         public ObservableCollection<Product> CartList
         {
+            
             get => _cartList;
-            set => _cartList = MenuViewModel.SelectedProducts;
+            set => _cartList = _menuViewModel.SelectedProducts;
 
         }
     }

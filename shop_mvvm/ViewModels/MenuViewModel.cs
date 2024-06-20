@@ -5,9 +5,9 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Avalonia.Controls;
 using ReactiveUI;
 using DynamicData;
-using Avalonia.Controls;
 using DynamicData.Binding;
 
 namespace shop_mvvm.ViewModels 
@@ -28,10 +28,10 @@ namespace shop_mvvm.ViewModels
             set => _ProductsList = value;
         }
 
-        public static ObservableCollection<Product> SelectedProducts
+        public  ObservableCollection<Product> SelectedProducts
         {
             get => _selectedProducts;
-            set => _selectedProducts = value;
+            set =>  this.RaiseAndSetIfChanged(ref _selectedProducts, value);
         }
 
         public bool isAdmin
@@ -47,7 +47,6 @@ namespace shop_mvvm.ViewModels
         }
 
        
-
         public string SearchText
         {
             get { return _searchText; }
@@ -66,17 +65,22 @@ namespace shop_mvvm.ViewModels
             }
             else
             {
-                var filteredItems = ProductsList.Where(i => i.ProductName.Contains(searchText, StringComparison.OrdinalIgnoreCase) ||
-                                     i.ProductDescription.Contains(searchText, StringComparison.OrdinalIgnoreCase));
+                var filteredItems = ProductsList.Where(i => i.ProductName.Contains(searchText));
                 SearchResults = new ObservableCollection<Product>(filteredItems);
             }
+        }
+
+        public void DeleteProduct(ObservableCollection<Product> selected_product)
+        {
+            selected_product = SelectedProducts;
+            ProductsList.Remove(selected_product);
         }
 
 
         public MenuViewModel()
         {
             
-        SearchResults = _ProductsList;
+            SearchResults = _ProductsList;
         }
 
     }

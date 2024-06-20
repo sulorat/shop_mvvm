@@ -35,4 +35,5 @@ public partial class Menu : Window
 
         cart.DataContext = new MenuViewModel();
     }
+
 }

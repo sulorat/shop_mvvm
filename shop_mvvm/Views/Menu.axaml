@@ -10,7 +10,7 @@
         Title="Menu">
 	<Grid ColumnDefinitions="*,*,*" RowDefinitions="3*,*" ShowGridLines="False">
 		<TextBlock Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Right" Text=""></TextBlock>
-		<ListBox x:Name="ProductsList" Grid.Row="0"  ItemsSource="{Binding Path=ProductsList, Mode = OneWay}" SelectedItems="{Binding SelectedProducts}"  Grid.Column="1" Width="600" >
+		<ListBox x:Name="ProductsList" Grid.Row="0"  ItemsSource="{Binding Path=SearchResults, Mode = OneWay}" SelectionMode="Multiple" SelectedItems="{Binding SelectedProducts}"  Grid.Column="1" Width="600" >
 			
 		<ListBox.ItemTemplate>
 			<DataTemplate>
@@ -46,10 +46,11 @@
 		</ListBox>
 		<StackPanel  Grid.Row="2"  Orientation="Horizontal" VerticalAlignment="Center" >
 			
-		<TextBox Margin="100,0,0,0" x:Name="SearchTextBox" Width="200" ></TextBox>
+		<TextBox Margin="100,0,0,0" x:Name="SearchTextBox" Text="{Binding SearchText}" Width="200" ></TextBox>
 			
 		<Button Margin="30,0,0,0" Click="ToAdd">Add new product</Button>
-			<Button Click="ToCart">Add to cart</Button>
+		<Button Click="ToCart">Add to cart</Button>
+		<Button Click="{Binding DeleteProduct}"></Button>
 		</StackPanel>
 	</Grid>
 </Window>
