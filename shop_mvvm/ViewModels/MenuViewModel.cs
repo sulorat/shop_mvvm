@@ -19,7 +19,7 @@ namespace shop_mvvm.ViewModels
         private static ObservableCollection<Product> _selectedProducts;
         private bool _isAdmin;
         private static ObservableCollection<Product> _ProductsList = new();
-
+        
        
 
         public static ObservableCollection<Product> ProductsList
@@ -31,7 +31,7 @@ namespace shop_mvvm.ViewModels
         public  ObservableCollection<Product> SelectedProducts
         {
             get => _selectedProducts;
-            set =>  this.RaiseAndSetIfChanged(ref _selectedProducts, value);
+            set => _selectedProducts = value;
         }
 
         public bool isAdmin
@@ -84,7 +84,15 @@ namespace shop_mvvm.ViewModels
         
         public MenuViewModel()
         {
-            
+            if(_selectedProducts != null) 
+            { 
+                Console.WriteLine(1); 
+                
+            }
+            else
+            {
+                Console.WriteLine(3);
+            }
             SearchResults = _ProductsList;
         }
 

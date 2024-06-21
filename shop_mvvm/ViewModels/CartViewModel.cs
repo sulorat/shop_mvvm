@@ -24,6 +24,8 @@ namespace shop_mvvm.ViewModels
             set => _cartList = _menuViewModel.SelectedProducts;
 
         }
+
+      
     }
     
 

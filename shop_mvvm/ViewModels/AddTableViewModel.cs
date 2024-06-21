@@ -63,6 +63,9 @@ namespace shop_mvvm.ViewModels
         }
 
         public void AddProduct()
+        
+        
+        
         {
 
             MenuViewModel.ProductsList.Add(new Product(ProductId, Name, Description, Price, Count));

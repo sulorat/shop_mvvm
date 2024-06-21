@@ -10,6 +10,7 @@ namespace shop_mvvm.Views
             InitializeComponent();
 
             DataContext = new MenuViewModel();
+            
         }
     }
 }
