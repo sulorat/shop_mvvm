@@ -8,9 +8,8 @@ namespace shop_mvvm.Views
         public Cart()
         {
             InitializeComponent();
+            DataContext = new CartViewModel();
 
-            DataContext = new MenuViewModel();
-            
         }
     }
 }

@@ -16,7 +16,7 @@ namespace shop_mvvm.ViewModels
     {
         private ObservableCollection<Product> _searchResults;
         private string _searchText;
-        private static ObservableCollection<Product> _selectedProducts;
+        private static ObservableCollection<Product> _selectedProducts = new();
         private bool _isAdmin;
         private static ObservableCollection<Product> _ProductsList = new();
         
@@ -70,29 +70,24 @@ namespace shop_mvvm.ViewModels
             }
         }
 
-        public  void DeleteProduct(ObservableCollection<Product> selected_product)
-        {
-            selected_product = SelectedProducts;
-            ProductsList.Remove(selected_product);
-        }
     
         public void Deleting()
         {
-            DeleteProduct(_selectedProducts);
+            for (int i = 0; i < ProductsList.Count; i++)
+            {
+                foreach (var selectedProd in SelectedProducts.ToList())
+                {
+                    if (ProductsList[i].ProductName == selectedProd.ProductName)
+                    {
+                        ProductsList.RemoveAt(i);
+                    }
+                }
+            }
         }
        
         
         public MenuViewModel()
         {
-            if(_selectedProducts != null) 
-            { 
-                Console.WriteLine(1); 
-                
-            }
-            else
-            {
-                Console.WriteLine(3);
-            }
             SearchResults = _ProductsList;
         }
 

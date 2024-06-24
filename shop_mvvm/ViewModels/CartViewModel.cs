@@ -12,16 +12,28 @@ namespace shop_mvvm.ViewModels
 {
 
 
-    internal class CartViewModel
+    internal class CartViewModel : MenuViewModel
     {
         private ObservableCollection<Product> _cartList;
-        MenuViewModel _menuViewModel = new MenuViewModel();
         
         public ObservableCollection<Product> CartList
         {
             
             get => _cartList;
-            set => _cartList = _menuViewModel.SelectedProducts;
+            set
+            {
+                for (int i = 0; i < SelectedProducts.Count; i++)
+                {
+                    foreach (var selectedProd in SelectedProducts.ToList())
+                    {
+                        if (ProductsList[i].ProductName == selectedProd.ProductName)
+                        {
+                            ProductsList.Add(SelectedProducts[i]);
+                        }
+                    }
+                    Console.WriteLine(_cartList.Count);
+                }
+            }
 
         }
 

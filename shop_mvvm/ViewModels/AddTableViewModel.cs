@@ -8,11 +8,11 @@ using Avalonia;
 using shop_mvvm.Models;
 using shop_mvvm.ViewModels;
 
-namespace shop_mvvm.ViewModels
+namespace shop_mvvm.ViewModels 
 {
 
 
-    internal class AddTableViewModel
+    internal class AddTableViewModel : MenuViewModel
     {
         private string _name;
         private string _description;
@@ -68,7 +68,7 @@ namespace shop_mvvm.ViewModels
         
         {
 
-            MenuViewModel.ProductsList.Add(new Product(ProductId, Name, Description, Price, Count));
+            ProductsList.Add(new Product(ProductId, Name, Description, Price, Count));
         }
 
     }
