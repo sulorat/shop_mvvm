@@ -1,3 +1,4 @@
+using System.Collections.ObjectModel;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
@@ -27,9 +28,8 @@ public partial class Menu : Window
 
     private void ToCart(object? sender, RoutedEventArgs e)
     {
-        Cart cart = new();
-
-
+        Window cart = new Cart( new ObservableCollection<Product>(ProductsList.SelectedItems));
+        
         cart.Show();
 
         this.Close();
