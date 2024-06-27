@@ -35,7 +35,6 @@
 						<TextBlock Grid.Column="1" Grid.Row="4" TextAlignment="Center" Margin="20,0 0,20" >Price</TextBlock>
 					
 						<TextBlock Grid.Column="2" Grid.Row="4" TextAlignment="Center" Margin="10,20,40,20" Text="{Binding ProductPrice}"/>
-
 						
 						
 					<CheckBox Grid.Row="2" Grid.Column="" > </CheckBox>

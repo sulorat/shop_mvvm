@@ -15,16 +15,6 @@ namespace shop_mvvm.ViewModels
         {
             
             get => _cartList;
-            set
-            {
-                for (int i = 0; i < SelectedProducts.Count; i++)
-                {
-                    foreach (var selectedProd in SelectedProducts.ToList())
-                    {
-                        _cartList.Add(selectedProd);
-                    }
-                }
-            }
 
         }
 
