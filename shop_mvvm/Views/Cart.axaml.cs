@@ -6,7 +6,7 @@ namespace shop_mvvm.Views
 {
     public partial class Cart : Window
     {
-        public Cart(ObservableCollection<Product> selected)
+        public Cart(object selected)
         {
             InitializeComponent();
             DataContext = new CartViewModel(selected);

@@ -28,7 +28,7 @@ public partial class Menu : Window
 
     private void ToCart(object? sender, RoutedEventArgs e)
     {
-        Window cart = new Cart( new ObservableCollection<Product>(ProductsList.SelectedItems));
+        Window cart = new Cart(ProductsList.SelectedItem);
         
         cart.Show();
 
