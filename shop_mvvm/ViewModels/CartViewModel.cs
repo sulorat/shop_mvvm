@@ -1,6 +1,7 @@
 ﻿using shop_mvvm.Models;
 using System.Collections.ObjectModel;
 
+
 namespace shop_mvvm.ViewModels
 {
 
@@ -13,9 +14,7 @@ namespace shop_mvvm.ViewModels
         private double _productCount;
         public ObservableCollection<Product> CartList
         {
-            
             get => _cartList;
-
         }
 
         public string _ProductName
@@ -38,11 +37,13 @@ namespace shop_mvvm.ViewModels
 
         public CartViewModel(object selected)
         {
-            Product _product = (Product)selected;
-            _productName = _product.ProductName;
-            _productPrice = _product.ProductPrice;
-            _productCount = _product.ProductCount;
-            _cartList.Add(_product);
+            
+                Product _product = (Product)selected;
+                _productName = _product.ProductName;
+                _productPrice = _product.ProductPrice;
+                _productCount = _product.ProductCount;
+                _cartList.Add(_product);
+                
         }
 
       

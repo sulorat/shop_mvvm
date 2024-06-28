@@ -7,6 +7,7 @@ using shop_mvvm.Models;
 using shop_mvvm.Views;
 using Avalonia.Interactivity;
 
+
 namespace shop_mvvm;
 
 public partial class Menu : Window
@@ -14,7 +15,19 @@ public partial class Menu : Window
    
     public Menu()
     {
-        InitializeComponent();
+         InitializeComponent();
+        if (MenuViewModel.isGuest == true)
+        {
+            AddBut.IsVisible = false;
+            DeleteBut.IsVisible = false;
+        }
+        if (MenuViewModel.isManager == true)
+        {
+            ToCartBut.IsVisible = false;
+            AddBut.IsVisible = false;
+            DeleteBut.IsVisible = false;
+        }
+       
         DataContext = new MenuViewModel();
 
     }
@@ -25,6 +38,14 @@ public partial class Menu : Window
 
         this.Close();
     }
+    
+    private void ToReg(object? sender, RoutedEventArgs e)
+    {
+        new Window1().Show();
+
+        this.Close();
+    }
+    
 
     private void ToCart(object? sender, RoutedEventArgs e)
     {

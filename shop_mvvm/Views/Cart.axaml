@@ -8,14 +8,13 @@
 		x:DataType="vm:CartViewModel"
         Title="Cart">
 	<Grid RowDefinitions="*,4*" ColumnDefinitions="*" ShowGridLines="True">
-		
+		<TextBlock  FontSize="30">Cart</TextBlock>
 	<StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center">
 		
-		<TextBlock  FontSize="30">Cart</TextBlock>
+		
 		
 			
 		<ListBox Name="CartList"  ItemsSource="{Binding CartList}" >
-			<TextBlock></TextBlock>
 		<ListBox.ItemTemplate>
 			
 			<DataTemplate>
@@ -24,7 +23,7 @@
 
 					<TextBlock Grid.Row="1" Grid.Column="1"   Margin="20,0, 0,20" >Name</TextBlock>
 
-					<TextBlock Grid.Column="1"  Grid.Row="1" Margin="0,20, 0,20"  Text="{Binding _ProductName }"/>
+					<TextBlock Grid.Column="1"  Grid.Row="1" Margin="0,20, 0,20"  Text="{Binding ProductName }"/>
 
 					<TextBlock Grid.Column="1" Grid.Row="3"  Margin="20,0 10,20" >Count</TextBlock>
 
@@ -41,6 +40,7 @@
 		</ListBox.ItemTemplate>
 			
 		</ListBox>
+		<Button Click="ToMain" Margin="20"> Back to shop</Button>
 		
 	</StackPanel>
 		

@@ -16,8 +16,10 @@ namespace shop_mvvm.ViewModels
     {
         private ObservableCollection<Product> _searchResults;
         private string _searchText;
+        private static  bool _isManager;
         private static ObservableCollection<Product> _selectedProducts = new();
-        private bool _isAdmin;
+        private static bool _isAdmin;
+        private static bool _isGuest;
         private static ObservableCollection<Product> _ProductsList = new();
         
        
@@ -34,10 +36,21 @@ namespace shop_mvvm.ViewModels
             set => _selectedProducts = value;
         }
 
-        public bool isAdmin
+        public static bool isAdmin
         {
             get => _isAdmin;
-            set => this.RaiseAndSetIfChanged(ref _isAdmin, value);
+            set => _isAdmin = value;
+        }
+
+        public static bool isGuest
+        {
+            get => _isGuest;
+            set => _isGuest = value;
+        }
+        public static bool isManager
+        {
+            get => _isManager;
+            set => _isManager = value;
         }
 
         public ObservableCollection<Product> SearchResults
@@ -88,6 +101,7 @@ namespace shop_mvvm.ViewModels
         
         public MenuViewModel()
         {
+            
             SearchResults = _ProductsList;
         }
 

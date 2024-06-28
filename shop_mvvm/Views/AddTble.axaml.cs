@@ -11,8 +11,6 @@ namespace shop_mvvm.Views
         
         public AddTble()
         {
-            MenuViewModel menuViewModel = new MenuViewModel();
-
             AddTableViewModel addTableViewModel = new AddTableViewModel();
 
             InitializeComponent(); 

@@ -45,11 +45,12 @@
 		</ListBox>
 		<StackPanel  Grid.Row="2"  Orientation="Horizontal" VerticalAlignment="Center" >
 			
-			<TextBox Margin="100,0,0,0" x:Name="SearchTextBox" Text="{Binding SearchText}" Width="200" ></TextBox>
+			<Button Margin="20,0,0,0" Click="ToReg" > Back</Button>
+			<TextBox Margin="60,0,0,0" x:Name="SearchTextBox" Text="{Binding SearchText}" Width="200" ></TextBox>
 			
-			<Button Margin="30,0,0,0" Click="ToAdd">Add new </Button>
-			<Button Click="ToCart">Add to cart</Button>
-			<Button  Command="{Binding Deleting}"> Delete</Button>
+			<Button Name="AddBut" Margin="30,0,0,0" Click="ToAdd">Add new </Button>
+			<Button Name="ToCartBut" Click="ToCart">Add to cart</Button>
+			<Button Name="DeleteBut" Command="{Binding Deleting}"> Delete</Button>
 		</StackPanel>
 	</Grid>
 </Window>
