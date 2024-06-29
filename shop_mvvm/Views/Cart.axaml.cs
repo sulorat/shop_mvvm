@@ -22,5 +22,7 @@ namespace shop_mvvm.Views
 
             this.Close();
         }
+        
+        
     }
 }

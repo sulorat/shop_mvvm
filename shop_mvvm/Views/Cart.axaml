@@ -14,7 +14,7 @@
 		
 		
 			
-		<ListBox Name="CartList"  ItemsSource="{Binding CartList}" >
+		<ListBox Name="CartList"  SelectedItems="{Binding SelectedItem}" ItemsSource="{Binding CartList}" >
 		<ListBox.ItemTemplate>
 			
 			<DataTemplate>
@@ -41,7 +41,7 @@
 			
 		</ListBox>
 		<Button Click="ToMain" Margin="20"> Back to shop</Button>
-		
+		<Button Margin="20" Command="{Binding Deleting}">Delete</Button>
 	</StackPanel>
 		
 	</Grid>

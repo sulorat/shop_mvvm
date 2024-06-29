@@ -1,5 +1,6 @@
 ﻿using shop_mvvm.Models;
 using System.Collections.ObjectModel;
+using Avalonia.Interactivity;
 
 
 namespace shop_mvvm.ViewModels
@@ -10,6 +11,7 @@ namespace shop_mvvm.ViewModels
     {
         private ObservableCollection<Product> _cartList = new();
         private string _productName;
+        private ObservableCollection<Product> _selectedItem;
         private double _productPrice;
         private double _productCount;
         public ObservableCollection<Product> CartList
@@ -35,6 +37,13 @@ namespace shop_mvvm.ViewModels
             set => _productCount = value;
         }
 
+        public ObservableCollection<Product> SelectedItem
+        {
+            get => _selectedItem;
+            set => _selectedItem = value;
+        }
+        
+
         public CartViewModel(object selected)
         {
             
@@ -44,6 +53,20 @@ namespace shop_mvvm.ViewModels
                 _productCount = _product.ProductCount;
                 _cartList.Add(_product);
                 
+        }
+
+        public void Deleting()
+        {
+            for (int i = 0; i < ProductsList.Count; i++)
+            {
+                foreach (var selectedProd in SelectedItem.ToList())
+                {
+                    if (_cartList[i].ProductName == selectedProd.ProductName)
+                    {
+                        CartList.RemoveAt(i);
+                    }
+                }
+            }
         }
 
       
